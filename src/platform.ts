@@ -2630,7 +2630,7 @@ export class SwitchBotPlatform implements DynamicPlatformPlugin {
   async connectBLE(accessory: PlatformAccessory, device: device & devicesConfig): Promise<any> {
     try {
       queueScheduler.schedule(async () => this.switchBotBLE)
-      this.debugLog(`${device.deviceType}: ${accessory.displayName} 'node-switchbot' found: ${JSON.stringify(this.switchBotBLE)}`)
+      this.debugLog(`${device.deviceType}: ${accessory.displayName} 'node-switchbot' found: ${JSON.stringify(this.switchBotBLE, null, '  ')}`)
       return this.switchBotBLE
     } catch (e: any) {
       this.errorLog(`${device.deviceType}: ${accessory.displayName} 'node-switchbot' not found, Error: ${e.message ?? e}`)
