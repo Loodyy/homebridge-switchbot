@@ -524,7 +524,7 @@ export class Bot extends deviceBase {
             .then(async (device_list: SwitchbotDevice[]) => {
               const deviceList = device_list as WoHand[]
               this.infoLog(`On: ${this.On}`)
-              this.warnLog(`device_list: ${JSON.stringify(device_list)}`)
+              this.warnLog(`device_list length: ${device_list.length}, first device id: ${device_list[0]?.id}`);
               return await this.retryBLE({
                 max: this.maxRetryBLE(),
                 fn: async () => {
